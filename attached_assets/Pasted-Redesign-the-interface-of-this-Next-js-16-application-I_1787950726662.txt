@@ -1,0 +1,89 @@
+Redesign the interface of this Next.js 16 application. It is COMPLETE and
+TESTED — 32 commits, 468 unit/db tests, 63 Playwright specs, WCAG 2.2 AA. You
+are improving how it looks and feels, not rebuilding it.
+
+Read docs/DESIGN_BRIEF.md first. It defines the users and the constraints.
+
+## The actual goal
+
+This is a professional growth platform for schoolteachers. The same data can
+read as "we are helping you develop" or "we are scoring you", and the difference
+is entirely design. The teacher looking at it is seeing their own professional
+record, which their manager can also see, and which feeds their appraisal.
+
+Make it feel like support without hiding anything or softening a real gap.
+Warm and honest at the same time. That is the brief. "Minimal and neat" is the
+surface of it.
+
+## Work in this order — foundations first
+
+1. Design tokens: type scale, spacing, radius, elevation, palette. Extend
+   src/app/globals.css and tailwind.config.ts. There are 19 tokens today.
+2. Primitives in src/components/: Card, Button, Badge, Field, Table,
+   EmptyState, StatusPill, Callout. clsx, tailwind-merge and lucide-react are
+   installed. recharts is installed and unused.
+3. The app shell. Navigation is 20 flat links shown to every role — this is the
+   worst structural problem. Group by task and show each role only what it can
+   reach.
+4. Teacher dashboard → Learning Map → competency detail. Stop after these three
+   and show me before going wider.
+5. Then: manager queue, leadership analytics, admin and compliance.
+
+Mobile-first for teacher-facing pages. Teachers use this on a phone between
+classes.
+
+## Rules specific to this product — not general good practice
+
+- A gap never appears without its route out next to it. Same screen.
+- Never use red or alarm colours for a person's competency level. A teacher
+  below expectation is not an error state.
+- Show verified level and expected level as two points on a journey, never as
+  pass/fail.
+- Verified growth should feel like an event. An open gap should feel like a task.
+- Analytics must NOT rank people. No sorted bar charts of named staff, no
+  leaderboards. Cohorts and distributions only. This is a product rule.
+- Where an expectation comes from (NPST, CBSE, school-defined) always travels
+  with it.
+- "Requires verification" must be as visible as "verified", never muted.
+
+## Do not break these
+
+1. These strings must appear VERBATIM — legal and ethical commitments, not copy.
+   Restyle them, give them a proper callout component — but do not shorten,
+   paraphrase, hide behind a disclosure, or make them less prominent than the
+   number they qualify:
+
+   "DEMO SCHOOL POLICY — NOT A CBSE OR PUNJAB GOVERNMENT FORMULA."
+   "AI-assisted recommendation — professional judgement required."
+   "Employment/service-rule applicability requires authorised verification."
+   "School funding/service status requires verification before employment-related
+    compliance calculations can be activated."
+
+2. Never let colour alone carry meaning. Verification status, plan stages,
+   milestones, appraisal steps, form success/failure and heatmap cells must all
+   remain readable without colour. Each was a real defect, found and fixed.
+
+3. Accessibility must not regress. Text 4.5:1, control borders and focus
+   indicators 3:1, light and dark. tests/unit/contrast.test.ts recomputes every
+   pair from globals.css and will fail you. Keep the skip link, aria-current,
+   per-page titles, 320px reflow, keyboard-reachable scroll regions.
+
+4. Do not touch src/lib/data/, src/lib/supabase/, src/app/actions/,
+   src/middleware.ts, or supabase/migrations/. Presentation only.
+
+5. No component library needing a build change, no CSS-in-JS runtime.
+   Tailwind v3 + hand-rolled components.
+
+## Tests
+
+60 Playwright assertions match visible text. If you legitimately change wording,
+UPDATE THE SPEC in the same commit and say which and why. Do not weaken a
+selector to make it pass, and do not delete a test.
+
+After each phase: npm run check, then npm run test:e2e:clean.
+If e2e cannot run here, say so rather than skipping silently.
+
+## Definition of done for phase 1
+
+Tokens, primitives and shell complete. npm run check green. Screenshots of the
+teacher dashboard in light and dark, at 375px and 1280px. Then stop and show me.

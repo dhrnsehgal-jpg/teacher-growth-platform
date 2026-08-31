@@ -1,0 +1,58 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ZkrV52JoWmjIuNBIVoBnf"
+uri = "file://screenshots/phase-1-dashboard-light-1280.png"
+type = "image"
+title = "Dashboard — light, 1280px"
+description = "Phase 1 desktop review screenshot using the authenticated demo teacher."
+logical_id = "03d05a80-6465-4b8d-a59d-76665f86ed3c"
+content_hash = "sha256:6da03b14e1de31096247f9756065d0c2ba2845cd32d67ea6d750c03b2057485d"
+size = 583167
+mtime_ms = 1787951914420
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f7e30028-7e3a-4583-b1c4-184fff245c65/03d05a80-6465-4b8d-a59d-76665f86ed3c/fa9de5be-8f8f-41ae-a9af-5febb667d1ce"
+storage_version_token = "1787952035004231"
+content_type = "image/png"
+
+[[outputs]]
+id = "8TW4BBZCduF7PKosZYqLp"
+uri = "file://screenshots/phase-1-dashboard-dark-1280.png"
+type = "image"
+title = "Dashboard — dark, 1280px"
+description = "Phase 1 desktop dark-theme review screenshot."
+logical_id = "446be142-61de-4597-bd24-166cb9a5791b"
+content_hash = "sha256:f3392378d50de855c48ad962279dcd99cecc6adca7b9744df1df794a0f145873"
+size = 584358
+mtime_ms = 1787951914924
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f7e30028-7e3a-4583-b1c4-184fff245c65/446be142-61de-4597-bd24-166cb9a5791b/1b447825-7dfa-4695-a246-609f19f6788e"
+storage_version_token = "1787952036335642"
+content_type = "image/png"
+
+[[outputs]]
+id = "K0r7PrsLkKGGn_pE8Pl1Q"
+uri = "file://screenshots/phase-1-dashboard-light-375.png"
+type = "image"
+title = "Dashboard — light, 375px"
+description = "Phase 1 mobile review screenshot with role-aware navigation."
+logical_id = "f5695342-f715-48a8-9aba-4e45d89d5ce7"
+content_hash = "sha256:94dfdd16240c6793e2cb6b143855d84a63ced5854da8da59e1cfa4e998a7a504"
+size = 558792
+mtime_ms = 1787951914584
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f7e30028-7e3a-4583-b1c4-184fff245c65/f5695342-f715-48a8-9aba-4e45d89d5ce7/ec6dc6a3-d322-45bf-8823-c565592858a8"
+storage_version_token = "1787952037649244"
+content_type = "image/png"
+
+[[outputs]]
+id = "oUlsbPzJrJSKLdXbtgDSd"
+uri = "file://screenshots/phase-1-dashboard-dark-375.png"
+type = "image"
+title = "Dashboard — dark, 375px"
+description = "Phase 1 mobile dark-theme review screenshot."
+logical_id = "2c049860-34c0-4d1c-9d78-f87f7183c834"
+content_hash = "sha256:95357f4666fda5b921743254508a6a42b56b8738839eb63c500960070652383f"
+size = 561414
+mtime_ms = 1787951915088
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f7e30028-7e3a-4583-b1c4-184fff245c65/2c049860-34c0-4d1c-9d78-f87f7183c834/1140703b-b755-4252-bb45-35248ae83885"
+storage_version_token = "1787952039209983"
+content_type = "image/png"

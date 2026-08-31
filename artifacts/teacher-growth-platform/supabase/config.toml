@@ -1,0 +1,61 @@
+project_id = "teacher-growth-platform"
+
+[api]
+enabled = true
+port = 54321
+# `core`, `regulatory` and `audit` are exposed so PostgREST can serve them under RLS.
+# `audit` is exposed read-only by policy — see 0007_audit.sql.
+schemas = ["public", "core", "regulatory", "audit", "competency", "kpi", "evidence", "growth", "assessment", "cpd", "compliance", "sqaaf", "service", "appraisal", "pay", "ai", "privacy"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[db.migrations]
+enabled = true
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+# Staff accounts are provisioned by the school, not self-registered.
+enable_signup = false
+
+[auth.email]
+# CAREFUL — this flag is misleadingly named. The CLI maps it to GoTrue's
+# EXTERNAL_EMAIL_ENABLED, which turns the whole email PROVIDER on or off, not
+# just registration. Setting it false makes every login fail with "Email logins
+# are disabled", locking out staff the school has provisioned.
+#
+# Self-registration is closed by `enable_signup = false` under [auth] above,
+# which maps to GOTRUE_DISABLE_SIGNUP. That is the correct lever.
+enable_signup = true
+enable_confirmations = true
+secure_password_change = true
+
+[auth.sessions]
+# Force re-authentication for long-lived sessions handling appraisal data.
+timebox = "24h"
+inactivity_timeout = "8h"
+
+[local_smtp]
+enabled = true
+port = 54324
+
+[storage]
+enabled = true
+# Evidence files (lesson plans, certificates, observation notes).
+file_size_limit = "50MiB"
+
+[analytics]
+enabled = false

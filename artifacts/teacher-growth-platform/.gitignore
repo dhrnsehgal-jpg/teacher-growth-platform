@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next
+.next/
+out/
+build/
+next-env.d.ts
+
+# testing
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# supabase
+supabase/.branches
+supabase/.temp
+supabase/.env
+
+# env — never commit real secrets
+.env
+.env*.local
+!.env.example
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-error.log*
+.vercel
+*.tsbuildinfo
+
+# generated types are committed on purpose; uncomment to exclude
+# src/types/database.ts
+
+# local postgres harness (scripts/local-postgres/run.sh)
+.localdb/

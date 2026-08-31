@@ -1,0 +1,10 @@
+.next
+node_modules
+coverage
+playwright-report
+test-results
+supabase/.temp
+# SQL is formatted by hand: migrations use aligned columns and block comments
+# that Prettier has no SQL parser for anyway, and reflowing them would destroy
+# the alignment the schema relies on for readability.
+*.sql
