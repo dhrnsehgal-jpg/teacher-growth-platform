@@ -1,0 +1,56 @@
+[
+  {
+    "key": "neha",
+    "email": "neha.sharma@demo-school.example",
+    "name": "Neha Sharma",
+    "role": "TGT, Mathematics — the teacher view"
+  },
+  {
+    "key": "vikram",
+    "email": "vikram.rao@demo-school.example",
+    "name": "Vikram Rao",
+    "role": "Head of Mathematics — supervises Neha, sees no pay data"
+  },
+  {
+    "key": "anjali",
+    "email": "anjali.mehta@demo-school.example",
+    "name": "Anjali Mehta",
+    "role": "Head of Science"
+  },
+  {
+    "key": "vice-principal",
+    "email": "meera.krishnan@demo-school.example",
+    "name": "Meera Krishnan",
+    "role": "Vice Principal — school-wide leadership without audit-log access"
+  },
+  {
+    "key": "academic-coordinator",
+    "email": "sunil.batra@demo-school.example",
+    "name": "Sunil Batra",
+    "role": "Academic Coordinator — academic oversight without audit-log access"
+  },
+  {
+    "key": "principal",
+    "email": "gurpreet.dhillon@demo-school.example",
+    "name": "Gurpreet Dhillon",
+    "role": "Principal — analytics, compliance, increment"
+  },
+  {
+    "key": "priya",
+    "email": "priya.chandra@demo-school.example",
+    "name": "Priya Chandra",
+    "role": "Compliance Administrator — the only audit-log reader"
+  },
+  {
+    "key": "harpreet",
+    "email": "harpreet.singh@demo-school.example",
+    "name": "Harpreet Singh",
+    "role": "PRT — a teacher with no appraisal yet"
+  },
+  {
+    "key": "simran",
+    "email": "simran.kaur@demo-school.example",
+    "name": "Simran Kaur",
+    "role": "Foundational Stage teacher"
+  }
+]

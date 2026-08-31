@@ -1,0 +1,4 @@
+- [Dependency audit overrides](dependency-audit-overrides.md) — use exact patched versions rather than open-ended audit-fix ranges
+- [Playwright on Nix](playwright-nix-runtime.md) — Chromium tests need the browser binary and native Linux runtime libraries installed in the workspace
+- [Mobile navigation timing](mobile-navigation-timing.md) — SSR-heavy destinations need bounded per-route and overall timeouts in mobile sweeps
+- [Hosted Supabase health probes](hosted-supabase-health-probes.md) — hosted PostgREST roots may return 401; use the auth settings endpoint for availability checks

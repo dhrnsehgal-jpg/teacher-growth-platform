@@ -1,0 +1,23 @@
+kind = "web"
+previewPath = "/"
+title = "Teacher Growth Platform"
+description = "A complete teacher professional-growth and compliance platform for schools, using hosted Supabase authentication, PostgREST, and Row Level Security."
+version = "1.0.0"
+id = "artifacts/teacher-growth-platform"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18192
+
+[services.development]
+run = "pnpm --filter @workspace/teacher-growth-platform run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/teacher-growth-platform", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/teacher-growth-platform", "run", "start" ]
+
+[services.env]
+PORT = "18192"
+HOSTNAME = "0.0.0.0"

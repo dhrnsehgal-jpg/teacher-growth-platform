@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', sans-serif;
+
+    /* Warm off-white background, deep calm teal/slate for text */
+    --background: 42 30% 98%;
+    --foreground: 196 40% 16%;
+
+    --muted: 42 20% 93%;
+    --muted-foreground: 196 20% 35%;
+
+    --border: 42 15% 86%;
+    --input: 196 20% 50%;
+
+    /* Primary: supportive teal */
+    --primary: 185 60% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --ring: 185 60% 32%;
+
+    /* Caution: system states only, not for competency */
+    --caution: 35 90% 92%;
+    --caution-foreground: 25 80% 25%;
+
+    --radius: 0.5rem;
+    --radius-card: 1rem;
+    --radius-button: 0.5rem;
+    --radius-pill: 9999px;
+
+    --space-page: clamp(1rem, 4vw, 3rem);
+    --space-section: 2rem;
+    --space-card: 1.5rem;
+
+    --text-hero: 2.25rem;
+    --text-title: 1.25rem;
+    --text-body: 0.9375rem;
+    --text-meta: 0.8125rem;
+
+    --shadow-card: 0 2px 8px -2px hsl(196 40% 16% / 0.05), 0 4px 16px -4px hsl(196 40% 16% / 0.05);
+    --shadow-elevated: 0 12px 32px hsl(196 40% 16% / 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 200 30% 10%;
+      --foreground: 42 20% 90%;
+
+      --muted: 200 25% 18%;
+      --muted-foreground: 196 20% 65%;
+
+      --border: 200 20% 24%;
+      --input: 196 20% 55%;
+
+      --primary: 185 40% 55%;
+      --primary-foreground: 200 30% 10%;
+
+      --ring: 185 40% 55%;
+
+      --caution: 27 60% 18%;
+      --caution-foreground: 38 92% 80%;
+    }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* One visible focus indicator for everything focusable. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}

@@ -1,0 +1,27 @@
+# Replit configuration.
+#
+# Replit runs the Next.js APPLICATION ONLY. The database, authentication and
+# storage stay on Supabase Cloud — see docs/REPLIT_DEPLOYMENT.md for why that
+# split is not optional here.
+
+modules = ["nodejs-22"]
+run = "npm run dev"
+
+hidden = [".next", "node_modules", ".config"]
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+# Next binds 0.0.0.0 so Replit's proxy can reach it. Without this the app
+# starts, reports no error, and is unreachable from outside the container.
+HOSTNAME = "0.0.0.0"
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
+run = ["npm", "run", "start"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
